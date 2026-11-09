@@ -2,7 +2,6 @@ import React from 'react';
 
 export default function Menu({ onBack }) {
   
-  // Función para hacer scroll suave a la sección seleccionada
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -10,7 +9,6 @@ export default function Menu({ onBack }) {
     }
   };
 
-  // DATOS COMPLETOS DE TU MENÚ (Ordenados y con opción de foto solo donde tú decidas)
   const menuCategories = [
     {
       id: "aguachiles",
@@ -21,20 +19,10 @@ export default function Menu({ onBack }) {
           price: "$210", 
           desc: "Camarón fresco curtido al momento en limón con salsa serrano y pepino crujiente.",
           hasPhoto: true,
-          photoUrl: null // Aquí podrás poner tu foto después, ej: "/aguachile.jpg"
+          photoUrl: null
         },
-        { 
-          name: "AGUACHILE NEGRO ESPECIAL", 
-          price: "$210", 
-          desc: "Salsa de chiles tatemados con toque de salsa inglesa, cítricos y habanero asado.",
-          hasPhoto: false 
-        },
-        { 
-          name: "AGUACHILE VERDE", 
-          price: "$210", 
-          desc: "Fresco del Pacífico con chiltepín y jugo de limón.",
-          hasPhoto: false 
-        }
+        { name: "AGUACHILE NEGRO ESPECIAL", price: "$210", desc: "Salsa de chiles tatemados con toque de salsa inglesa, cítricos y habanero asado.", hasPhoto: false },
+        { name: "AGUACHILE VERDE", price: "$210", desc: "Fresco del Pacífico con chiltepín y jugo de limón.", hasPhoto: false }
       ]
     },
     {
@@ -50,13 +38,7 @@ export default function Menu({ onBack }) {
       id: "botana",
       name: "Botana de la casa",
       items: [
-        { 
-          name: "Botana La Patrona", 
-          price: "$295", 
-          desc: "Camarón cocido, camarón crudo, atún, callo, pulpo, pepino y cebolla morada.", 
-          hasPhoto: true,
-          photoUrl: null
-        }
+        { name: "Botana La Patrona", price: "$295", desc: "Camarón cocido, camarón crudo, atún, callo, pulpo, pepino y cebolla morada.", hasPhoto: true, photoUrl: null }
       ]
     },
     {
@@ -124,8 +106,8 @@ export default function Menu({ onBack }) {
         { name: "Agua del día", price: "$25", desc: "", hasPhoto: false },
         { name: "Agua del día 1 lt.", price: "$35", desc: "", hasPhoto: false },
         { name: "Cerveza (Corona Light / Pacífico)", price: "$35", desc: "", hasPhoto: false },
-        { name: "Michelada 1 lt. (Cerveza, sal, limón, clamato y salsas)", price: "$75", desc: "", hasPhoto: false },
-        { name: "Chelada (Cerveza, sal y limón)", price: "$60", desc: "", hasPhoto: false },
+        { name: "Michelada 1 lt.", price: "$75", desc: "Cerveza, sal, limón, clamato y salsas", hasPhoto: false },
+        { name: "Chelada", price: "$60", desc: "Cerveza, sal y limón", hasPhoto: false },
         { name: "Vaso Michelado", price: "$30", desc: "", hasPhoto: false },
         { name: "Vaso Chelado", price: "$20", desc: "", hasPhoto: false }
       ]
@@ -133,13 +115,16 @@ export default function Menu({ onBack }) {
   ];
 
   return (
-    <div className="menu-container-modern">
-      {/* Botón superior para regresar */}
-      <button className="back-btn" onClick={onBack}>
-        <i className="fa-solid fa-arrow-left"></i> Volver al inicio
-      </button>
+    <div className="menu-mobile-container">
+      {/* Barra superior fija con botón de regreso limpio */}
+      <div className="menu-top-bar">
+        <button className="back-btn-clean" onClick={onBack}>
+          <i className="fa-solid fa-arrow-left"></i> Inicio
+        </button>
+        <span className="menu-top-title">Mariscos El Salado</span>
+      </div>
 
-      {/* Barra superior de accesos rápidos (Pestañas horizontales) */}
+      {/* Pestañas horizontales de acceso rápido */}
       <div className="sticky-tabs-bar">
         {menuCategories.map((cat) => (
           <button
@@ -152,7 +137,7 @@ export default function Menu({ onBack }) {
         ))}
       </div>
 
-      {/* CONTENIDO CONTINUO DEL MENÚ (Scroll vertical) */}
+      {/* Contenido scrolleable del menú */}
       <div className="menu-scroll-area">
         {menuCategories.map((section) => (
           <div key={section.id} id={section.id} className="menu-category-section">
@@ -162,7 +147,6 @@ export default function Menu({ onBack }) {
               {section.items.map((dish, idx) => (
                 <div key={idx} className="menu-item-row">
                   
-                  {/* Si el platillo lleva foto, mostramos el banner grande destacado como en tu imagen */}
                   {dish.hasPhoto ? (
                     <div className="dish-featured-card">
                       <div className="dish-featured-image-box">
@@ -170,8 +154,8 @@ export default function Menu({ onBack }) {
                           <img src={dish.photoUrl} alt={dish.name} className="featured-img" />
                         ) : (
                           <div className="placeholder-banner">
-                            <i className="fa-solid fa-camera text-slate-400 text-2xl mb-1"></i>
-                            <span className="text-xs text-slate-500 font-medium">Espacio reservado para foto</span>
+                            <i className="fa-solid fa-camera text-slate-400 text-xl mb-1"></i>
+                            <span className="text-[11px] text-slate-500 font-medium">Espacio reservado para foto</span>
                           </div>
                         )}
                       </div>
@@ -184,7 +168,6 @@ export default function Menu({ onBack }) {
                       </div>
                     </div>
                   ) : (
-                    /* Formato clásico de texto con puntos suspensivos */
                     <div className="dish-classic-line">
                       <div className="classic-info">
                         <span className="classic-name">{dish.name}</span>
@@ -202,10 +185,12 @@ export default function Menu({ onBack }) {
         ))}
       </div>
 
-      {/* Botón inferior */}
-      <button className="back-btn-bottom mt-8" onClick={onBack}>
-        <i className="fa-solid fa-arrow-left"></i> Regresar al inicio
-      </button>
+      {/* Botón inferior fijo para volver */}
+      <div className="menu-bottom-bar">
+        <button className="back-btn-bottom-solid" onClick={onBack}>
+          <i className="fa-solid fa-house"></i> Volver al inicio
+        </button>
+      </div>
     </div>
   );
 }

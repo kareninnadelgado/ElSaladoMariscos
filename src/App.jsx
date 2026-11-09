@@ -12,7 +12,7 @@ export default function App() {
   const INSTAGRAM_URL = "https://instagram.com/tu_usuario_aqui";
   const FACEBOOK_URL = "https://facebook.com/tu_pagina_aqui";
   const MAPS_LOCATION_URL = "https://maps.google.com/?q=Mariscos+El+Salado";
-  const GOOGLE_REVIEW_URL = "https://search.google.com/local/writereview?placeid=AQUÍ_VA_TU_PLACE_ID"; 
+  const GOOGLE_REVIEW_URL = "https://g.page/r/CQVum-NJl_23EBM/review"; 
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent("¡Hola! Me gustaría hacer un pedido para llevar.");
