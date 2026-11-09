@@ -14,13 +14,7 @@ export default function Menu({ onBack }) {
       id: "aguachiles",
       name: "Aguachiles",
       items: [
-        { 
-          name: "AGUACHILE VERDE TRADICIONAL", 
-          price: "$210", 
-          desc: "Camarón fresco curtido al momento en limón con salsa serrano y pepino crujiente.",
-          hasPhoto: true,
-          photoUrl: null
-        },
+        { name: "AGUACHILE VERDE TRADICIONAL", price: "$210", desc: "Camarón fresco curtido al momento en limón con salsa serrano y pepino crujiente.", hasPhoto: true, photoUrl: null },
         { name: "AGUACHILE NEGRO ESPECIAL", price: "$210", desc: "Salsa de chiles tatemados con toque de salsa inglesa, cítricos y habanero asado.", hasPhoto: false },
         { name: "AGUACHILE VERDE", price: "$210", desc: "Fresco del Pacífico con chiltepín y jugo de limón.", hasPhoto: false }
       ]
@@ -116,12 +110,10 @@ export default function Menu({ onBack }) {
 
   return (
     <div className="menu-card-wrapper">
-      {/* Barra superior limpia */}
-      <div className="menu-top-bar">
-        <button className="back-btn-clean" onClick={onBack}>
-          <i className="fa-solid fa-arrow-left"></i> Inicio
-        </button>
-        <span className="menu-top-title">Mariscos El Salado</span>
+      {/* Título elegante del menú */}
+      <div className="menu-header-clean">
+        <h2 className="menu-main-title">MARISCOS EL SALADO</h2>
+        <span className="menu-subtitle-tag">Menú Digital</span>
       </div>
 
       {/* Pestañas horizontales de acceso rápido */}
@@ -137,7 +129,7 @@ export default function Menu({ onBack }) {
         ))}
       </div>
 
-      {/* Área de scroll interno del menú */}
+      {/* Área de contenido del menú */}
       <div className="menu-scroll-area">
         {menuCategories.map((section) => (
           <div key={section.id} id={section.id} className="menu-category-section">
@@ -185,7 +177,7 @@ export default function Menu({ onBack }) {
         ))}
       </div>
 
-      {/* Botón inferior para volver */}
+      {/* Único botón inferior para volver al inicio */}
       <div className="menu-bottom-bar">
         <button className="back-btn-bottom-solid" onClick={onBack}>
           <i className="fa-solid fa-house"></i> Volver al inicio
