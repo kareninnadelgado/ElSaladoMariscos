@@ -352,3 +352,25 @@ html, body {
   color: #64748b;
   margin-top: 2px;
 }
+
+.quick-tab-btn {
+  background-color: #f8fafc;
+  color: #1c355e;
+  border: 1px solid #e2e8f0;
+  padding: 6px 12px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* BOTÓN DE CATEGORÍA SELECCIONADA EN AZUL */
+.quick-tab-btn.active-tab {
+  background-color: #1c355e;
+  color: #ffffff;
+  border-color: #1c355e;
+  box-shadow: 0 2px 8px rgba(28, 53, 94, 0.3);
+}

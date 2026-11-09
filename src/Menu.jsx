@@ -1,13 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Menu({ onBack }) {
-  
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
+  // Estado para la categoría activa (por defecto inicia en "aguachiles")
+  const [activeTab, setActiveTab] = useState("aguachiles");
 
   const menuCategories = [
     {
@@ -108,9 +103,36 @@ export default function Menu({ onBack }) {
     }
   ];
 
+  const scrollToSection = (id) => {
+    setActiveTab(id);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  // Escuchar el scroll para cambiar el botón activo en automático
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = menuCategories.map(cat => document.getElementById(cat.id));
+      const scrollPosition = window.scrollY + 140;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveTab(menuCategories[i].id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [menuCategories]);
+
   return (
     <div className="full-menu-container">
-      {/* BARRA SUPERIOR FIJA (STICKY) CON BOTÓN DE REGRESO Y CATEGORÍAS */}
+      {/* BARRA SUPERIOR FIJA (STICKY) */}
       <div className="fixed-header">
         <div className="top-nav-row">
           <button className="back-btn-top" onClick={onBack}>
@@ -119,13 +141,13 @@ export default function Menu({ onBack }) {
           <span className="brand-header-title">Mariscos El Salado</span>
         </div>
 
-        {/* Pestañas deslizables de categorías */}
+        {/* Pestañas deslizables de categorías con estado activo */}
         <div className="sticky-tabs-bar">
           {menuCategories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => scrollToSection(cat.id)}
-              className="quick-tab-btn"
+              className={`quick-tab-btn ${activeTab === cat.id ? 'active-tab' : ''}`}
             >
               {cat.name}
             </button>
