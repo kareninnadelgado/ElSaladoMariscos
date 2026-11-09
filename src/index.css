@@ -13,12 +13,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 16px;
 }
 
+/* Tarjeta Principal de Inicio */
 .card-wrapper {
   width: 100%;
-  max-width: 380px;
+  max-width: 420px;
   background-color: #ffffff;
   border-radius: 28px;
   padding: 30px 24px 24px 24px;
@@ -32,13 +33,13 @@ body {
 
 /* Avatar Circular */
 .logo-container {
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   overflow: hidden;
   border: 4px solid #ffffff;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   background-color: #f8fafc;
 }
 
@@ -50,10 +51,10 @@ body {
 
 /* Título */
 .brand-title {
-  font-size: 1.75rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #1a2b4c;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 /* Botones principales */
@@ -61,23 +62,23 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
 .btn-primary {
   width: 100%;
-  padding: 16px;
+  padding: 14px;
   background-color: #f25c22;
   color: #ffffff;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   border: none;
   border-radius: 14px;
   cursor: pointer;
   letter-spacing: 0.5px;
   box-shadow: 0 4px 12px rgba(242, 92, 34, 0.25);
-  transition: transform 0.1s ease, background-color 0.2s ease;
+  transition: transform 0.1s ease;
 }
 
 .btn-primary:active {
@@ -86,17 +87,17 @@ body {
 
 .btn-secondary {
   width: 100%;
-  padding: 16px;
+  padding: 14px;
   background-color: #1c355e;
   color: #ffffff;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   border: none;
   border-radius: 14px;
   cursor: pointer;
   letter-spacing: 0.5px;
   box-shadow: 0 4px 12px rgba(28, 53, 94, 0.25);
-  transition: transform 0.1s ease, background-color 0.2s ease;
+  transition: transform 0.1s ease;
 }
 
 .btn-secondary:active {
@@ -108,12 +109,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .social-btn {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background-color: #fff8f3;
   color: #1a2b4c;
@@ -121,11 +122,10 @@ body {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   border: none;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.2s ease;
 }
 
 .social-btn.location {
@@ -136,23 +136,21 @@ body {
   background-color: #ffefe2;
 }
 
-
-/* --- SECCIÓN DE PEDIR PARA LLEVAR --- */
-
+/* Sección Pedir para Llevar */
 .order-section {
   width: 100%;
   background-color: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-radius: 18px;
-  padding: 14px;
-  margin-bottom: 20px;
+  border-radius: 16px;
+  padding: 12px;
+  margin-bottom: 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .order-title {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #1c355e;
   text-transform: uppercase;
@@ -165,57 +163,54 @@ body {
 
 .order-buttons-grid {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   width: 100%;
 }
 
 .order-btn {
   flex: 1;
-  padding: 10px 12px;
-  border-radius: 12px;
-  font-size: 0.85rem;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.8rem;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   border: none;
   cursor: pointer;
   text-decoration: none;
-  transition: transform 0.1s ease, filter 0.2s ease;
-}
-
-.order-btn:active {
-  transform: scale(0.97);
 }
 
 .whatsapp-btn {
   background-color: #25d366;
   color: #ffffff;
-  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
 }
 
 .call-btn {
   background-color: #f25c22;
   color: #ffffff;
-  box-shadow: 0 4px 10px rgba(242, 92, 34, 0.2);
 }
 
 
-/* --- ESTILOS MENÚ ESTILO APP MODERNA --- */
+/* --- CONTENEDOR DEL MENÚ (Ajustado como tarjeta centrada adaptable) --- */
 
-.menu-mobile-container {
+.menu-card-wrapper {
   width: 100%;
-  max-width: 100%;
-  min-height: 100vh;
+  max-width: 440px;
+  height: 85vh;
   background-color: #ffffff;
-  padding: 12px 16px 80px 16px;
-  box-sizing: border-box;
+  border-radius: 28px;
+  padding: 20px 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
+  margin: auto;
 }
 
-/* Barra superior limpia */
+/* Barra superior limpia dentro del menú */
 .menu-top-bar {
   display: flex;
   align-items: center;
@@ -223,6 +218,7 @@ body {
   padding-bottom: 10px;
   border-bottom: 1px solid #e2e8f0;
   margin-bottom: 12px;
+  flex-shrink: 0;
 }
 
 .back-btn-clean {
@@ -232,7 +228,7 @@ body {
   padding: 6px 12px;
   border-radius: 8px;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -240,18 +236,19 @@ body {
 }
 
 .menu-top-title {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: #1c355e;
 }
 
-/* Pestañas superiores deslizables */
+/* Pestañas superiores de acceso rápido deslizables */
 .sticky-tabs-bar {
   display: flex;
   gap: 6px;
   overflow-x: auto;
   padding-bottom: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  flex-shrink: 0;
   scrollbar-width: none;
 }
 
@@ -271,20 +268,32 @@ body {
   cursor: pointer;
 }
 
-.quick-tab-btn:active {
+.quick-tab-btn:hover {
   background-color: #1c355e;
   color: #ffffff;
 }
 
-/* Área de scroll del menú */
+/* Área de scroll interno del menú */
 .menu-scroll-area {
+  flex: 1;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding-right: 4px;
+}
+
+.menu-scroll-area::-webkit-scrollbar {
+  width: 4px;
+}
+
+.menu-scroll-area::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
 }
 
 .category-header-title {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: #f25c22;
   margin-bottom: 10px;
@@ -297,7 +306,7 @@ body {
   gap: 10px;
 }
 
-/* Líneas clásicas de texto adaptadas */
+/* Líneas clásicas con puntos suspensivos */
 .dish-classic-line {
   display: flex;
   align-items: baseline;
@@ -319,7 +328,7 @@ body {
 }
 
 .classic-desc {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: #64748b;
 }
 
@@ -332,13 +341,13 @@ body {
 }
 
 .classic-price {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: #1c355e;
   white-space: nowrap;
 }
 
-/* Tarjeta destacada para foto en móvil */
+/* Tarjeta destacada con espacio para foto */
 .dish-featured-card {
   background-color: #f8fafc;
   border-radius: 14px;
@@ -349,7 +358,7 @@ body {
 
 .dish-featured-image-box {
   width: 100%;
-  height: 130px;
+  height: 120px;
   background-color: #e2e8f0;
   display: flex;
   align-items: center;
@@ -373,44 +382,44 @@ body {
 }
 
 .item-title-bold {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 800;
   color: #1c355e;
 }
 
 .item-price-bold {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 800;
   color: #f25c22;
 }
 
 .item-desc-text {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: #64748b;
   line-height: 1.2;
 }
 
 /* Botón inferior fijo */
 .menu-bottom-bar {
-  margin-top: 30px;
-  padding: 10px 0;
-  display: flex;
-  justify-content: center;
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #f1f5f9;
+  flex-shrink: 0;
 }
 
 .back-btn-bottom-solid {
   width: 100%;
-  padding: 14px;
+  padding: 12px;
   background-color: #1c355e;
   color: white;
   border: none;
-  border-radius: 14px;
+  border-radius: 12px;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  box-shadow: 0 4px 12px rgba(28, 53, 94, 0.25);
+  box-shadow: 0 4px 10px rgba(28, 53, 94, 0.2);
 }

@@ -115,8 +115,8 @@ export default function Menu({ onBack }) {
   ];
 
   return (
-    <div className="menu-mobile-container">
-      {/* Barra superior fija con botón de regreso limpio */}
+    <div className="menu-card-wrapper">
+      {/* Barra superior limpia */}
       <div className="menu-top-bar">
         <button className="back-btn-clean" onClick={onBack}>
           <i className="fa-solid fa-arrow-left"></i> Inicio
@@ -137,7 +137,7 @@ export default function Menu({ onBack }) {
         ))}
       </div>
 
-      {/* Contenido scrolleable del menú */}
+      {/* Área de scroll interno del menú */}
       <div className="menu-scroll-area">
         {menuCategories.map((section) => (
           <div key={section.id} id={section.id} className="menu-category-section">
@@ -185,7 +185,7 @@ export default function Menu({ onBack }) {
         ))}
       </div>
 
-      {/* Botón inferior fijo para volver */}
+      {/* Botón inferior para volver */}
       <div className="menu-bottom-bar">
         <button className="back-btn-bottom-solid" onClick={onBack}>
           <i className="fa-solid fa-house"></i> Volver al inicio

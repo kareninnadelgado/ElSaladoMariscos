@@ -9,9 +9,9 @@ export default function App() {
   const DISPLAY_PHONE = "312-116-6123"; 
 
   // Enlaces reales
-  const INSTAGRAM_URL = "https://instagram.com/tu_usuario_aqui";
-  const FACEBOOK_URL = "https://facebook.com/tu_pagina_aqui";
-  const MAPS_LOCATION_URL = "https://maps.google.com/?q=Mariscos+El+Salado";
+  const INSTAGRAM_URL = "https://www.instagram.com/mariscos_el_.salado?vrfl=NXp6dnB1dmxhYXZ3";
+  const FACEBOOK_URL = "https://www.facebook.com/share/1EMDK1ZP26/?mibextid=wwXIfr";
+  const MAPS_LOCATION_URL = "https://maps.app.goo.gl/Z1zdkvMR5ET1PM9B8";
   const GOOGLE_REVIEW_URL = "https://g.page/r/CQVum-NJl_23EBM/review"; 
 
   const handleWhatsApp = () => {
