@@ -109,28 +109,32 @@ export default function Menu({ onBack }) {
   ];
 
   return (
-    <div className="menu-card-wrapper">
-      {/* Título elegante del menú */}
-      <div className="menu-header-clean">
-        <h2 className="menu-main-title">MARISCOS EL SALADO</h2>
-        <span className="menu-subtitle-tag">Menú Digital</span>
-      </div>
-
-      {/* Pestañas horizontales de acceso rápido */}
-      <div className="sticky-tabs-bar">
-        {menuCategories.map((cat) => (
-          <button
-            key={cat.id}
-            onClick={() => scrollToSection(cat.id)}
-            className="quick-tab-btn"
-          >
-            {cat.name}
+    <div className="full-menu-container">
+      {/* BARRA SUPERIOR FIJA (STICKY) CON BOTÓN DE REGRESO Y CATEGORÍAS */}
+      <div className="fixed-header">
+        <div className="top-nav-row">
+          <button className="back-btn-top" onClick={onBack}>
+            <i className="fa-solid fa-arrow-left"></i> Inicio
           </button>
-        ))}
+          <span className="brand-header-title">Mariscos El Salado</span>
+        </div>
+
+        {/* Pestañas deslizables de categorías */}
+        <div className="sticky-tabs-bar">
+          {menuCategories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => scrollToSection(cat.id)}
+              className="quick-tab-btn"
+            >
+              {cat.name}
+            </button>
+          ))}
+        </div>
       </div>
 
-      {/* Área de contenido del menú */}
-      <div className="menu-scroll-area">
+      {/* ÁREA DE PLATILLOS */}
+      <div className="menu-items-body">
         {menuCategories.map((section) => (
           <div key={section.id} id={section.id} className="menu-category-section">
             <h3 className="category-header-title">{section.name.toUpperCase()}</h3>
@@ -175,13 +179,6 @@ export default function Menu({ onBack }) {
             </div>
           </div>
         ))}
-      </div>
-
-      {/* Único botón inferior para volver al inicio */}
-      <div className="menu-bottom-bar">
-        <button className="back-btn-bottom-solid" onClick={onBack}>
-          <i className="fa-solid fa-house"></i> Volver al inicio
-        </button>
       </div>
     </div>
   );
